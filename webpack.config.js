@@ -1,7 +1,13 @@
+// ==============
+// Necessary requirements in order for the following settings to work properly
+// =============
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
+// ============
+// Webpack settings
+// ============
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
