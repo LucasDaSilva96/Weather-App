@@ -22,7 +22,24 @@ body {
   position: relative;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 0.3fr 1.5fr 1fr;
+  grid-template-rows: 0.3fr 0.8fr 0.2fr 1fr;
+  place-content: center;
+
+  background-image: radial-gradient(
+    circle,
+    #91c8e4,
+    #8bbfde,
+    #85b7d8,
+    #7faed1,
+    #7aa6cb,
+    #74a0c6,
+    #6f9bc1,
+    #6995bc,
+    #6190b7,
+    #588bb3,
+    #4f87ae,
+    #4682a9
+  );
 }
 
 /* =============== */
@@ -53,6 +70,22 @@ header {
   transition: all 0.3s ease-in-out;
 }
 
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: black;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: black;
+}
+
 #search-btn {
   background-color: transparent;
   border: none;
@@ -69,6 +102,150 @@ header {
   transition: all 0.5s ease-in;
   box-shadow: var(--shadow);
   border-radius: var(--radius);
+}
+
+/* =============== */
+/* Switch Section*/
+/* =============== */
+.switch-temp-section {
+  align-self: start;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.switch-temp-section input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switch-temp-section label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 100px;
+  height: 40px;
+  background: var(--forecast-background);
+  box-shadow: var(--shadow);
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+#C,
+#F {
+  font-size: 2rem;
+  color: white;
+}
+
+.switch-temp-section label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 50px;
+  height: 30px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.switch-temp-section input:checked + label {
+  background: var(--forecast-background);
+}
+
+.switch-temp-section input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.switch-temp-section label:active:after {
+  width: 100px;
+}
+/* =============== */
+/* Forecast section*/
+/* =============== */
+.forecast_container {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  background-color: var(--forecast-background);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 5px;
+  width: 90vw;
+  max-width: 476px;
+}
+
+.temp-place-box {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.temp-box h2,
+.temp-box strong {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+.place-box {
+  display: flex;
+  align-items: center;
+}
+
+.place-box h4 {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.svg-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.svg-1 {
+  grid-column: 1 / 2;
+}
+.svg-2 {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+.svg-3 {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+}
+.svg-4 {
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+}
+
+/* =============== */
+/* Daily forecast */
+/* =============== */
+.daily-section {
+  display: grid;
+  grid-template-rows: repeat(3, 0.25fr);
+  row-gap: 25px;
+}
+.day-forecast-box {
+  width: 90vw;
+  max-width: 476px;
+  background-color: var(--forecast-background);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.day,
+.day-temp {
+  color: #fff;
+  font-size: 1.4rem;
 }
 
 /* =============== */
