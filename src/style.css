@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --search-background: rgba(217, 217, 217, 0.1);
+  --light-cold-background: rgb(105, 155, 247, 0.1);
+  --light-raining-background: rgb(18, 18, 18, 0.3);
+  --light-warm-background: rgb(195, 141, 141, 0.3);
+  --forecast-background: rgb(255, 255, 255, 0.1);
+
+  --shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  --radius: 10px;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 0.3fr 1.5fr 1fr;
+}
+
+/* =============== */
+/* Search Section */
+/* =============== */
+header {
+  align-self: center;
+  justify-self: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--radius);
+}
+
+#search-bar {
+  background-color: var(--search-background);
+  padding: 5px;
+  border-radius: var(--radius);
+  font-size: 18px;
+  border: none;
+  outline: none;
+  text-align: center;
+  box-shadow: var(--shadow);
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+#search-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#search-glass {
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  transition: all 0.5s ease-in;
+}
+
+#search-arrow {
+  transition: all 0.5s ease-in;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+/* =============== */
+/* Background Image classes */
+/* =============== */
+.cold-weather {
+  /* The image used */
+  background-image: url("./images/cold_weather.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.raining-weather {
+  /* The image used */
+  background-image: url("./images/raining_weather.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.warm-weather {
+  /* The image used */
+  background-image: url("./images/warm_weather.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* =============== */
+/* Reusable classes */
+/* =============== */
+
+.hidden {
+  display: none;
+}
+
+.slide {
+  transform: translateX(-720%);
+}
+.slide-out {
+  animation: slide__out 3s ease-in;
+  transform: translateX(300%);
+}
+
+@keyframes slide__ {
+  0% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}

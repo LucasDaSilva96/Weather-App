@@ -1,3 +1,9 @@
 import "./style.css";
+import { activateShowBarAni, activateHideSearchBar } from "./animation.js";
 
-console.log("HEllo");
+document.querySelector("body").classList.add("cold-weather");
+
+window.addEventListener("DOMContentLoaded", function () {
+  activateShowBarAni();
+  activateHideSearchBar();
+});
