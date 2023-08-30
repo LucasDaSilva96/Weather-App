@@ -184,9 +184,15 @@ header {
   grid-template-rows: 1fr 1fr;
 }
 
-.temp-box h2,
-.temp-box strong {
-  font-size: 3.5rem;
+.temp-box h2 {
+  font-size: 3rem;
+  padding-left: 10px;
+  color: #fff;
+}
+
+#today_text {
+  font-size: 1.5rem;
+  text-align: center;
   color: #fff;
 }
 
@@ -413,4 +419,18 @@ header {
   100% {
     transform: rotate(380deg);
   }
+}
+
+/* ******************* Default Forecast Icon *********************/
+.default-icon-box {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  border-radius: var(--radius);
+}
+
+#day_icon,
+.day_icon-forecast {
+  max-width: 64px;
+  max-height: 64px;
 }
