@@ -72,25 +72,48 @@ export function renderBackgroundImage(temp) {
 }
 
 export async function renderDaysForecast(ForecastArray) {
-  let iconsURL = [];
   const forecastIconsElement = document.querySelectorAll(".day_icon-forecast");
+}
 
-  for (let i = 1; i < ForecastArray.forecast.forecastday.length; i++) {
-    iconsURL[i] = ForecastArray.forecast.forecastday[i].day.condition.icon;
-  }
+const weather_conditions = [
+  {
+    code: 1000,
+    day: "Sunny",
+    night: "Clear",
+    icon: 113,
+  },
+  {
+    code: 1006,
+    day: "Cloudy",
+    night: "Cloudy",
+    icon: 119,
+  },
+  {
+    code: 1087,
+    day: "Thundery outbreaks possible",
+    night: "Thundery outbreaks possible",
+    icon: 200,
+  },
 
-  let URL_1 = iconsURL[1];
-  let URL_2 = iconsURL[2];
-  let URL_3 = iconsURL[3];
+  {
+    code: 1192,
+    day: "Heavy rain at times",
+    night: "Heavy rain at times",
+    icon: 305,
+  },
 
-  try {
-    const response_1 = await fetch(`https:${URL_1}`);
-    const response_2 = await fetch(`https:${URL_2}`);
-    const response_3 = await fetch(`https:${URL_3}`);
-    forecastIconsElement[0].src = response_1.url;
-    forecastIconsElement[1].src = response_2.url;
-    forecastIconsElement[2].src = response_3.url;
-  } catch (error) {
-    throw new Error("Failed to fetch icon-image, Error: ", error);
-  }
+  {
+    code: 1225,
+    day: "Heavy snow",
+    night: "Heavy snow",
+    icon: 338,
+  },
+];
+
+function findIconN(icon_code) {
+  let index = weather_conditions.findIndex((el) => {
+    return el.code === icon_code;
+  });
+
+  return weather_conditions[index].icon;
 }

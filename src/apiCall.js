@@ -21,7 +21,6 @@ export async function Make_API_call(place) {
     const data = await response.json();
 
     RESPONSE = data;
-    console.log(data);
     renderBackgroundImage(data.current.temp_c);
     renderTodayTemp(data, "c");
     renderForecastText(data.forecast.forecastday[0].day.condition.text);
@@ -37,5 +36,20 @@ export async function Make_API_call(place) {
     renderDaysForecast(data);
   } catch (error) {
     throw new Error("Failed to fetch data, Error: ", error);
+  }
+}
+
+// OpenWeather API
+const OPEN_WEATHER_API_KEY = "64eda751657841e56332c0e524e654b6";
+
+export async function Make_API_call_2(city) {
+  try {
+    const response = await fetch(
+      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${OPEN_WEATHER_API_KEY}`
+    );
+    const data = await response.json();
+    console.log(data.list);
+  } catch (error) {
+    throw new Error("Failed to fetch openWeather, Error: ", error);
   }
 }
