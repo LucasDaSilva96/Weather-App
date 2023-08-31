@@ -8,15 +8,14 @@
     "url": "git+https://github.com/LucasDaSilva96/Weather-App.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "build": "webpack",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "author": "Lucas Da Silva",
   "license": "ISC",
-  "homepage": "http://LucasDaSilva96.github.io/Weather-App",
+  "homepage": "http://LucasDaSilva96.github.io/Weather-App/dist/index.html",
   "devDependencies": {
     "@babel/core": "^7.22.11",
     "@babel/preset-env": "^7.22.10",
