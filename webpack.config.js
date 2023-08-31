@@ -22,7 +22,6 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "http://LucasDaSilva96.github.io/Weather-App/dist/index.html",
     clean: true,
   },
   module: {

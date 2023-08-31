@@ -3,19 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LucasDaSilva96/Weather-App.git"
-  },
   "scripts": {
     "watch": "webpack --watch",
-    "build": "webpack",
-    "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build"
+    "build": "webpack"
   },
   "author": "Lucas Da Silva",
   "license": "ISC",
-  "homepage": "http://LucasDaSilva96.github.io/Weather-App/dist/index.html",
   "devDependencies": {
     "@babel/core": "^7.22.11",
     "@babel/preset-env": "^7.22.10",
