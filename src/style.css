@@ -22,9 +22,9 @@ body {
   position: relative;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 0.3fr 0.5fr 0.2fr 1fr;
-  place-content: center;
-
+  grid-template-rows: 0.3fr 0.5fr 0.2fr 1fr, 0.5fr;
+  /* place-content: center; */
+  overflow: hidden;
   background-image: radial-gradient(
     circle,
     #91c8e4,
@@ -41,7 +41,10 @@ body {
     #4682a9
   );
 }
-
+section {
+  align-self: center;
+  justify-self: center;
+}
 /* =============== */
 /* Search Section */
 /* =============== */
@@ -282,6 +285,69 @@ header {
 }
 
 /* =============== */
+/* Footer */
+/* =============== */
+footer {
+  margin-top: auto;
+  background-color: rgb(0, 0, 0, 0.6);
+  padding: 5px;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 16px;
+}
+
+footer span a {
+  text-decoration: none;
+  color: white;
+  margin: auto;
+  font-size: 16px;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+}
+
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+
+  30% {
+    color: hsl(230, 80%, 90%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  40% {
+    color: hsl(230, 100%, 95%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+}
+
+/* =============== */
 /* Reusable classes */
 /* =============== */
 
@@ -399,25 +465,6 @@ header {
   }
   100% {
     opacity: 0;
-  }
-}
-
-/* ******************* Sun *********************/
-.sun {
-  align-self: center;
-  margin-top: 20px;
-}
-
-.sun svg {
-  animation: sunRise 6s ease-in-out infinite;
-}
-
-@keyframes sunRise {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(380deg);
   }
 }
 

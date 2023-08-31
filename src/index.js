@@ -1,11 +1,12 @@
 import "./style.css";
 import { activateShowBarAni, activateHideSearchBar } from "./animation.js";
-import { Make_API_call, Make_API_call_2 } from "./apiCall.js";
+import { searFunction, getSearchValue, getUserLocation } from "./apiCall.js";
 
-document.querySelector("body").classList.add("warm-weather");
+// This is for invoking the necessary functions in order for the app to work properly when the page is loaded
 window.addEventListener("DOMContentLoaded", function () {
   activateShowBarAni();
   activateHideSearchBar();
-  Make_API_call("Elverum");
-  Make_API_call_2("Elverum");
+  getUserLocation();
+  getSearchValue();
+  searFunction();
 });
