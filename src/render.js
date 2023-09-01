@@ -94,12 +94,17 @@ export function renderBackgroundImage(data) {
   const today_index = findData(data.list, getFormatedDate(0));
   const today_object = data.list[today_index];
   const temp = Math.floor(today_object.main.temp);
+  const today_object_str = `${data.list[today_index].weather[0].description}`;
+  today_object_str.toLocaleLowerCase();
 
-  if (temp <= 5) {
+  if (temp <= 5 || today_object_str.includes("snow")) {
+    Html_body.className = "";
     return Html_body.classList.add("cold-weather");
-  } else if (temp > 5 && temp <= 15) {
+  } else if (today_object_str.includes("rain")) {
+    Html_body.className = "";
     return Html_body.classList.add("raining-weather");
-  } else if (temp > 15) {
+  } else if (temp >= 20 || today_object_str.includes("clear")) {
+    Html_body.className = "";
     return Html_body.classList.add("warm-weather");
   }
 }

@@ -25,21 +25,6 @@ body {
   grid-template-rows: 0.3fr 0.5fr 0.2fr 1fr, 0.5fr;
   /* place-content: center; */
   overflow: hidden;
-  background-image: radial-gradient(
-    circle,
-    #91c8e4,
-    #8bbfde,
-    #85b7d8,
-    #7faed1,
-    #7aa6cb,
-    #74a0c6,
-    #6f9bc1,
-    #6995bc,
-    #6190b7,
-    #588bb3,
-    #4f87ae,
-    #4682a9
-  );
 }
 section {
   align-self: center;
@@ -274,6 +259,19 @@ header {
 .warm-weather {
   /* The image used */
   background-image: url("./images/warm_weather.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.default-weather {
+  /* The image used */
+  background-image: url("./images/Weather-app-default.png");
 
   /* Full height */
   height: 100%;
