@@ -16,7 +16,7 @@ const OPEN_WEATHER_API_KEY = "64eda751657841e56332c0e524e654b6";
 export async function Make_API_call_Weather(city) {
   try {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${OPEN_WEATHER_API_KEY}&units=metric`,
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${OPEN_WEATHER_API_KEY}&units=metric`,
       {
         mode: "cors",
       }
