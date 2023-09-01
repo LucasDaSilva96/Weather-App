@@ -25,6 +25,21 @@ body {
   grid-template-rows: 0.3fr 0.5fr 0.2fr 1fr, 0.5fr;
   /* place-content: center; */
   overflow: hidden;
+  background-image: linear-gradient(
+    to bottom,
+    #2063a5,
+    #236db1,
+    #2578bc,
+    #2883c8,
+    #2b8ed3,
+    #2c92d7,
+    #2d95da,
+    #2e99de,
+    #2e96db,
+    #2d93d7,
+    #2d91d4,
+    #2c8ed1
+  );
 }
 section {
   align-self: center;
