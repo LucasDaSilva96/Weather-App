@@ -90,7 +90,6 @@ export function renderForecastText(data) {
 // This function is for rendering the background image on the HTML-body depending on the current temp
 export function renderBackgroundImage(data) {
   const Html_body = document.querySelector("body");
-  Html_body.className = "none";
   const today_index = findData(data.list, getFormatedDate(0));
   const today_object = data.list[today_index];
   const temp = Math.floor(today_object.main.temp);
