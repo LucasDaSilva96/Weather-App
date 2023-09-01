@@ -106,6 +106,8 @@ export function renderBackgroundImage(data) {
   } else if (temp >= 20 || today_object_str.includes("clear")) {
     Html_body.className = "";
     return Html_body.classList.add("warm-weather");
+  } else {
+    return Html_body.classList.add("default-weather");
   }
 }
 
